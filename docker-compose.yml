@@ -11,3 +11,11 @@ msa-config:
     - "8781:8781"
   links:
     - "msa-eureka"
+msa-user-provider:
+  image: yekki/msa-user-provider:1.0-SNAPSHOT
+  hostname: api
+  ports:
+  - "8089:8089"
+  links:
+  - "msa-eureka"
+  - "msa-config"

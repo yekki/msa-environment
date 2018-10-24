@@ -11,6 +11,7 @@
     <modules>
         <module>msa-eureka</module>
         <module>msa-config</module>
+        <module>msa-user-provider</module>
     </modules>
 
     <properties>
@@ -29,6 +30,7 @@
         <project.build.finalName>msa-app</project.build.finalName>
         <docker.port>8080:8080</docker.port>
         <proxy-servers></proxy-servers>
+        <mysql.version>8.0.13</mysql.version>
     </properties>
     <dependencies>
         <dependency>
@@ -39,6 +41,12 @@
     </dependencies>
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>

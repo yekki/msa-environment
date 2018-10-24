@@ -1,8 +1,6 @@
 server:
   port: 8781
 spring:
-  profiles:
-    active: dev
   application:
     name: msa-config
   cloud:
@@ -12,13 +10,13 @@ spring:
         git:
           uri: https://github.com/yekki/msa-config.git
           search-paths: /**
-          username: yekki
-          password: ####
+
 
 eureka:
+  instance:
+    instance-id: ${eureka.instance.hostname}:${spring.application.name}:${server.port}
+    hostname: config
   client:
     service-url:
       defaultZone: http://eureka:8761/eureka/
-  instance:
-    hostname: config
-    prefer-ip-address: true
+

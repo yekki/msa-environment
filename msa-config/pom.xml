@@ -12,7 +12,7 @@
     <artifactId>msa-config</artifactId>
     <properties>
         <docker.port>8781:8781</docker.port>
-        <proxy-servers>-Dhttp.proxyHost=cn-proxy.cn.oracle.com -Dhttp.proxyPort=80 -Dhttps.proxyHost=cn-proxy.cn.oracle.com -Dhttps.proxyPort=80</proxy-servers>
+        <!--<proxy-servers>-Dhttp.proxyHost=cn-proxy.cn.oracle.com -Dhttp.proxyPort=80 -Dhttps.proxyHost=cn-proxy.cn.oracle.com -Dhttps.proxyPort=80</proxy-servers>-->
     </properties>
     <dependencies>
         <dependency>
@@ -21,7 +21,7 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-netflix-eureka-client</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
     </dependencies>
 </project>

@@ -1,0 +1,21 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: msa-eureka
+
+eureka:
+  server:
+    enable-self-preservation: false
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  instance:
+    hostname: eureka
+    instance-id: ${eureka.instance.hostname}:${spring.application.name}:${server.port}
+
+
+
