@@ -1,0 +1,13 @@
+msa-eureka:
+  image: yekki/msa-eureka:1.0-SNAPSHOT
+  hostname: eureka
+  ports:
+    - "8761:8761"
+
+msa-config:
+  image: yekki/msa-config:1.0-SNAPSHOT
+  hostname: config
+  ports:
+    - "8781:8781"
+  links:
+    - "msa-eureka"
