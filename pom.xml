@@ -13,11 +13,14 @@
         <module>msa-config</module>
         <module>msa-user-provider</module>
         <module>msa-gateway</module>
+        <module>msa-user-common</module>
+        <module>msa-user-consumer</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <project.version>1.0-SNAPSHOT</project.version>
         <java.version>1.8</java.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -42,6 +45,11 @@
     </dependencies>
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>me.yekki.springcloud</groupId>
+                <artifactId>msa-user-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>

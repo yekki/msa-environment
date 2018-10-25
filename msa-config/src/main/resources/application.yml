@@ -10,6 +10,10 @@ spring:
         git:
           uri: https://github.com/yekki/msa-config.git
           search-paths: /**
+  security:
+    user:
+      name: admin
+      password: admin
 
 
 eureka:
@@ -19,4 +23,3 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka:8761/eureka/
-

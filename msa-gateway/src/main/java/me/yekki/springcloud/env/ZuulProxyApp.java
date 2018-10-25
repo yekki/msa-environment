@@ -19,7 +19,7 @@ public class ZuulProxyApp {
 
         return new ZuulProperties();
     }
-    
+
     public static void main(String[] args) {
         SpringApplication.run(ZuulProxyApp.class, args);
     }

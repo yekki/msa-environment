@@ -2,6 +2,7 @@ package me.yekki.springcloud.env.test.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import me.yekki.springcloud.env.test.vo.UserVO;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,23 +11,21 @@ import javax.persistence.Id;
 
 @Entity
 @Data
-public class User {
+public class User extends UserVO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @JsonIgnore
     private Long id;
-    private String username;
-    private String password;
-    private String email;
+
 
     public User() {
         super();
     }
 
     public User(String username, String password, String email) {
-        this.username = username;
-        this.password = password;
-        this.email = email;
+        this.setUsername(username);
+        this.setPassword(password);
+        this.setEmail(email);
     }
 }
