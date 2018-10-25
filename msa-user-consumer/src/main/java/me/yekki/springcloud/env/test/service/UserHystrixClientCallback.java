@@ -1,18 +1,17 @@
 package me.yekki.springcloud.env.test.service;
 
-import me.yekki.springcloud.env.test.vo.JsonResponse;
+import me.yekki.springcloud.env.test.vo.ResultVO;
 import me.yekki.springcloud.env.test.vo.UserVO;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 public class UserHystrixClientCallback implements UserHystrixClient {
 
     @Override
-    public JsonResponse<UserVO> getUsers() {
+    public ResultVO<List<UserVO>> getUsers() {
 
-        JsonResponse resp = JsonResponse.error();
-        resp.setDescription("error occurs");
-
-        return resp;
+        return ResultVO.fail("Failed to get users from msa-user-provider service.");
     }
 }

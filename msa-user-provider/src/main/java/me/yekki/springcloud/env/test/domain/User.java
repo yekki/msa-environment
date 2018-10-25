@@ -1,8 +1,10 @@
 package me.yekki.springcloud.env.test.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.util.BeanUtil;
 import lombok.Data;
 import me.yekki.springcloud.env.test.vo.UserVO;
+import org.springframework.beans.BeanUtils;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -39,13 +41,9 @@ public class User {
     }
 
     public UserVO toDTO() {
-
         UserVO vo = new UserVO();
-        vo.setId(this.getId());
-        vo.setUsername(this.getUsername());
-        vo.setPassword(this.getPassword());
-        vo.setEmail(this.getEmail());
 
+        BeanUtils.copyProperties(this,vo);
         return vo;
     }
 }
