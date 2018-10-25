@@ -11,12 +11,15 @@ import javax.persistence.Id;
 
 @Entity
 @Data
-public class User extends UserVO {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @JsonIgnore
-    private Long id;
+    Long id;
+    String username;
+    String password;
+    String email;
 
 
     public User() {
@@ -27,5 +30,22 @@ public class User extends UserVO {
         this.setUsername(username);
         this.setPassword(password);
         this.setEmail(email);
+    }
+
+    public User(UserVO user) {
+        this.setUsername(user.getUsername());
+        this.setPassword(user.getPassword());
+        this.setEmail(user.getEmail());
+    }
+
+    public UserVO toDTO() {
+
+        UserVO vo = new UserVO();
+        vo.setId(this.getId());
+        vo.setUsername(this.getUsername());
+        vo.setPassword(this.getPassword());
+        vo.setEmail(this.getEmail());
+
+        return vo;
     }
 }
