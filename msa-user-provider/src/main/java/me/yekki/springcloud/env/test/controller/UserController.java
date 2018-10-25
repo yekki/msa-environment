@@ -10,7 +10,6 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 @RestController
-@RequestMapping("/api")
 public class UserController {
 
     @Autowired
@@ -64,5 +63,11 @@ public class UserController {
         }
 
         return u;
+    }
+
+    @GetMapping("/hello")
+    public String sayHello() {
+
+        return "hello world!";
     }
 }

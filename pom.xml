@@ -12,6 +12,7 @@
         <module>msa-eureka</module>
         <module>msa-config</module>
         <module>msa-user-provider</module>
+        <module>msa-gateway</module>
     </modules>
 
     <properties>
@@ -46,7 +47,6 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
