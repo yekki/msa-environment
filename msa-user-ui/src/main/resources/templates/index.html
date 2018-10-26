@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>User List</title>
+</head>
+<body>
+<table border="1">
+    <thead>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Email</th>
+    </thead>
+    <tr th:each="user : ${model.users}">
+        <td th:text="${user.id}">id</td>
+        <td th:text="${user.username}">username</td>
+        <td th:text="${user.password}">password</td>
+        <td th:text="${user.email}">password</td>
+    </tr>
+</table>
+</body>
+</html>

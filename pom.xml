@@ -15,6 +15,7 @@
         <module>msa-gateway</module>
         <module>msa-user-common</module>
         <module>msa-user-consumer</module>
+        <module>msa-user-ui</module>
     </modules>
 
     <properties>
