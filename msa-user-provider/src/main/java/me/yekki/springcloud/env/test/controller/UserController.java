@@ -1,18 +1,24 @@
 package me.yekki.springcloud.env.test.controller;
 
+import me.yekki.springcloud.env.test.config.AppProperties;
 import me.yekki.springcloud.env.test.service.UserService;
 import me.yekki.springcloud.env.test.vo.ResultVO;
 import me.yekki.springcloud.env.test.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RefreshScope
 public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private AppProperties appProperties;
 
     @GetMapping("/users/gen/{n}")
     public ResultVO<List<UserVO>> genUsers(@PathVariable("n") int n) {
@@ -56,9 +62,9 @@ public class UserController {
         return ResultVO.success(userService.editUser(user));
     }
 
-    @GetMapping("/echo")
+    @GetMapping("/app")
     public String echo() {
 
-        return "echo hello world!";
+        return String.format("Author: %s, Email: %s", appProperties.getAuthor(), appProperties.getEmail());
     }
 }
