@@ -1,0 +1,6 @@
+encrypt:
+  keystore:
+    location: classpath:/server.jks
+    password: password
+    alias:  mytestkey
+    secret: password

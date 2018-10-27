@@ -16,8 +16,9 @@
         <module>msa-user-common</module>
         <module>msa-user-consumer</module>
         <module>msa-user-ui</module>
-        <module>msa-rabbitmq-client</module>
-        <module>msa-config-client</module>
+        <module>msa-common-client</module>
+        <module>msa-common-utils</module>
+        <module>msa-hystrix-dashboard</module>
     </modules>
 
     <properties>
