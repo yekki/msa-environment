@@ -3,18 +3,31 @@ server:
 spring:
   application:
     name: msa-config
+  rabbitmq:
+    host: config
+    port: 5672
+    username: gniu
+    password: gniu
   cloud:
+    bus:
+      trace:
+        enabled: true
     config:
       label: master
       server:
         git:
-          uri: https://github.com/yekki/msa-config.git
+          uri: https://gitee.com/yekki/msa-config.git
           search-paths: /**
-  security:
-    user:
-      name: admin
-      password: admin
+#  security:
+#    user:
+#      name: admin
+#      password: admin
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
 
 eureka:
   instance:

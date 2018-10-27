@@ -1,6 +1,5 @@
 package me.yekki.springcloud.env.test.controller;
 
-import me.yekki.springcloud.env.test.config.AppProperties;
 import me.yekki.springcloud.env.test.service.UserService;
 import me.yekki.springcloud.env.test.vo.ResultVO;
 import me.yekki.springcloud.env.test.vo.UserVO;
@@ -16,9 +15,6 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-
-    @Autowired
-    private AppProperties appProperties;
 
     @GetMapping("/users/gen/{n}")
     public ResultVO<List<UserVO>> genUsers(@PathVariable("n") int n) {
@@ -60,11 +56,5 @@ public class UserController {
     public ResultVO<UserVO> editUser(@ModelAttribute UserVO user) {
 
         return ResultVO.success(userService.editUser(user));
-    }
-
-    @GetMapping("/app")
-    public String echo() {
-
-        return String.format("Author: %s, Email: %s", appProperties.getAuthor(), appProperties.getEmail());
     }
 }

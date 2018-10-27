@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "app")
 @Data
 @Component
+@RefreshScope
 public class AppProperties {
     private String author;
     private String email;
